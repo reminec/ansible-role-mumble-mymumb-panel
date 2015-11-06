@@ -22,6 +22,14 @@
   template: src=etc-php5-apache2-conf.d/IcePHP.ini.j2 dest=/etc/php5/apache2/conf.d/IcePHP.ini
   notify: restart apache2
 
+- name: Check if IcePHP is not compile in wrong directory
+  stat: path="/usr/lib/php5/20090626+lfs/IcePHP.so"
+  register: ice_wrong_path
+
+- name: Make symbolic link if IcePHP is in wrong folder
+  file: src="/usr/lib/php5/20090626+lfs/IcePHP.so" dest="/usr/lib/php5/20090626/IcePHP.so" state=link
+  when: ice_wrong_path.stat.exists
+
 - name: Configure apache2
   template: src="etc-apache2-sites-available/{{ mymumb_apache_default_vhost_filename }}.j2" dest="/etc/apache2/sites-available/{{ mymumb_apache_default_vhost_filename }}"
   notify: restart apache2

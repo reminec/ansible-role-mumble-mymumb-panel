@@ -4,5 +4,7 @@
   vars:
     - mymumb_install_apache2: true
     - mymumb_use_login_protection: true
+    - mymumb_username: John
+    - mymumb_password: 2829fc16ad8ca5a79da932f910afad1c
   roles:
     - ansible-role-mumble-mymumb-panel

@@ -29,3 +29,4 @@ script:
     | grep -q 'MyMumb - Manager'
     && (echo 'Status code 200 test: pass' && exit 0)
     || (echo 'Status code 200 test: fail' && exit 1)
+
