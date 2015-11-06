@@ -24,8 +24,8 @@ script:
   - "ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo"
 
   # Make sure myMumb is running.
-    - >
-      curl http://localhost/index.php?login
-      | grep -q 'MyMumb - Manager'
-      && (echo 'Status code 200 test: pass' && exit 0)
-      || (echo 'Status code 200 test: fail' && exit 1)
+  - >
+    curl http://localhost/index.php?login
+    | grep -q 'MyMumb - Manager'
+    && (echo 'Status code 200 test: pass' && exit 0)
+    || (echo 'Status code 200 test: fail' && exit 1)

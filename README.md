@@ -1,4 +1,5 @@
 # Ansible Role Mumble MyMumb panel
+[![Build Status](https://travis-ci.org/reminec/ansible-role-mumble-mymumb-panel.svg?branch=master)](https://travis-ci.org/reminec/ansible-role-mumble-mymumb-panel)
 
 Install latest release of [MyMumb panel](https://github.com/dieonar/MyMumb-Panel).
 
