@@ -1,4 +1,8 @@
 ---
 # tasks file for roles/reminec.mymumb/
+- include: install_apache2.yml tags=mymumb_install
+  when: mymumb_install_apache2
 - include: install.yml tags=mymumb_install
+- include: configure_apache2.yml tags=mymumb_configure
+  when: mymumb_install_apache2
 - include: configure.yml tags=mymumb_configure
