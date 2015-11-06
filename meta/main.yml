@@ -1,0 +1,20 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: reminec
+  description: Install MyMumb panel. Can Install and configure apache2 if needed
+  company: "reminec"
+  license: "license (MIT)"
+  min_ansible_version: 1.7.2
+  platforms:
+  - name: Debian
+    versions:
+      - all
+  - name: Ubuntu
+    versions:
+      - all
+  galaxy_tags:
+    - voice
+    - panel
+    - mumble

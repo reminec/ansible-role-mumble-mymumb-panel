@@ -1,0 +1,19 @@
+---
+- name: Configure mymumb
+  template: src=config.inc.php.j2 dest={{ mymumb_path}}/inc/config.inc.php
+  when: mymumb_manage_config
+
+- name: Enable apache2 mod rewrite
+  apache2_module: state=present name=rewrite
+  when: mymumb_install_apache2
+
+- name: Configure apache2 include_path for Ice
+  template: src=etc-php5-apache2-conf.d/IcePHP.ini.j2 dest=/etc/php5/apache2/conf.d/IcePHP.ini
+  when: mymumb_install_apache2
+  notify: restart apache2
+
+- name: Configure apache2
+  template: src=etc-apache2-sites-available/default.j2 dest=/etc/apache2/sites-available/default
+  when: mymumb_install_apache2
+  notify: restart apache2
+

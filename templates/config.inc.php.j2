@@ -1,0 +1,17 @@
+<?php
+	$MyConfig = array();
+	$MyConfig['default_host'] = '{{ mymumb_default_host }}'; //Ip of your Mumble Server. If its the same Server no need to change it.
+	$MyConfig['default_port'] = {{ mymumb_default_port }}; //The Port of your Mumble Server
+	$MyConfig['ICE_Password'] = '{{ mymumb_ice_password }}'; //The Password used in the mumble-server.ini
+	$MyConfig['default_language'] = '{{ mymumb_default_language }}'; //Change the Language currently supported en_EN fr_FR de_DE
+	$MyConfig['use_login_protection'] = {{ mymumb_use_login_protection }}; //Change to true if using the below and not the ICE Secret
+	$MyConfig['Username'] = '{{ mymumb_username }}';
+	$MyConfig['Password'] = '{{ mymumb_password }}';
+
+
+	/**
+     *	Edit the following line ONLY if you have trouble for connection
+     *	Comment the first line and uncomment the other.
+	**/
+	$MyConfig['MetaConnection'] = "{{ mymum_metaconnection }}";
+?>

@@ -1,0 +1,4 @@
+---
+# tasks file for roles/reminec.mymumb/
+- include: install.yml tags=mymumb_install
+- include: configure.yml tags=mymumb_configure
